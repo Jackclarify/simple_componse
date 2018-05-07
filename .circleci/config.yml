@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build-and-test:
+  build:
     working_directory: ~/clarify-hospital
     environment:
       CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
