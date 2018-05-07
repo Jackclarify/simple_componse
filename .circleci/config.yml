@@ -62,7 +62,7 @@ workflows:
   version: 2
   build-test-deploy:
       jobs:
-        - build-and-test:
+        - build:
             filters:
               branches:
                 # ignore release branches to prevent recursive builds
@@ -72,4 +72,4 @@ workflows:
               branches:
                 only: master
             requires:
-              - build-and-test
+              - build
