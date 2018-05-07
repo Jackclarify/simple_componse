@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build-and-test:
+  build:
     working_directory: ~/clarify-hospital
     environment:
       CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
@@ -52,17 +52,11 @@ jobs:
       - restore_cache:
           keys:
           - v1-clarify-dep-{{ .Branch }}-{{ checksum "package.json" }}
-
-      - run:
-          name: export environments
-          working_directory: ~/clarify-hospital
-          command: echo -e "export ROLE=clarify\nexport HOSPITAL_HOME=$HOME/clarify-hospital\nexport DYNAMIC_MODEL_EXPLANATION=true\nexport CIRCLE_TOKEN=b52ee78ec408343f85d16c071a354061701252aa" >> $BASH_ENV
-
 workflows:
   version: 2
   build-test-deploy:
       jobs:
-        - build-and-test:
+        - build:
             filters:
               branches:
                 # ignore release branches to prevent recursive builds
@@ -72,4 +66,4 @@ workflows:
               branches:
                 only: master
             requires:
-              - build-and-test
+              - build
