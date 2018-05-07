@@ -1,0 +1,28 @@
+{
+  "name": "simple-componse",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/repo"
+  },
+  "author": {
+    "name": "Jackclarify",
+    "email": "jack.chen@clarifyhealth.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/username/repo/issues"
+  },
+  "main": "simple-componse.umd.js",
+  "module": "simple-componse.js",
+  "jsnext:main": "simple-componse.js",
+  "typings": "simple-componse.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
